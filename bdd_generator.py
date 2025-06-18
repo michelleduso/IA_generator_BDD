@@ -47,3 +47,28 @@ Gere agora os cenários:
 '''
 
 prompt = PromptTemplate.from_template(template_prompt)
+
+if st.button("🚀 Gerar Casos BDD"):
+    if funcionalidade and objetivo:
+        with st.spinner("Gerando casos de teste..."):
+            resposta = chat.invoke(
+                prompt.format(
+                    funcionalidade=funcionalidade,
+                    tipo_usuario=tipo_usuario,
+                    objetivo=objetivo,
+                    contexto=contexto if contexto else "Nenhum"
+                )
+            )
+            st.subheader("✅ Casos BDD Gerados:")
+            st.code(resposta.content, language="gherkin")
+
+            # Botão para download
+            st.download_button(
+                label="⬇️ Baixar como .feature",
+                data=resposta.content,
+                file_name=f"{funcionalidade.lower().replace(' ', '_')}.feature",
+                mime="text/plain"
+            )
+    else:
+        st.warning("Por favor, preencha os campos obrigatórios: Funcionalidade e Objetivo.")
+
