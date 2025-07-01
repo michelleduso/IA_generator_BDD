@@ -1,0 +1,71 @@
+# 🧪 Gerador de Casos de Teste BDD
+
+Aplicação em Python com Streamlit que gera cenários de teste BDD automaticamente com base em informações fornecidas pelo usuário. Utiliza o modelo **GPT-4o-mini** da OpenAI para criar os casos no formato **Gherkin** (com palavras-chave em inglês e o restante em português).
+
+## 🚀 Funcionalidades
+
+- Geração automática de 2 a 3 cenários BDD com base em:
+  - Funcionalidade a ser testada
+  - Tipo de usuário
+  - Objetivo do teste
+  - Contexto adicional (opcional)
+- Saída no formato puro Gherkin:
+  - Palavras-chave: Given, When, Then, And, But
+  - Frases descritivas em português
+- Interface amigável com Streamlit
+- Download do resultado no formato `.feature`
+
+## 📦 Estrutura do Projeto
+
+## 🛠️ Tecnologias Utilizadas
+
+- Python 3.10+
+- Streamlit
+- LangChain
+- OpenAI API
+- python-dotenv
+- langchain-openai
+
+
+# Configuração do projeto
+
+
+### 1. Realize o clone do projeto
+
+```bash
+git clone "nome do repositório"
+```
+
+## 📦 Instalar às Bibliotecas do Python
+
+```bash
+pip install Streamlit
+```
+
+```bash
+pip install LangChain
+```
+
+```bash
+pip install python-dotenv
+```
+
+```bash
+pip install openai
+```
+
+## Como executar o projeto
+
+```bash
+streamlit run bdd_generator.py
+```
+
+## 🔑 Como obter sua OpenAI API Key
+Para utilizar a API da OpenAI neste projeto, você precisa gerar sua própria chave de acesso (API_KEY). Siga os passos abaixo:
+
+Acesse o site https://openai.com/ e crie uma conta (caso ainda não tenha);
+Após o login, vá até a área de API Keys no painel da OpenAI;
+Adicione um cartão de crédito válido à sua conta;
+Escolha o modelo que deseja utilizar (ex: gpt-4o, gpt-4o-mini, etc.);
+Adicione créditos à sua conta (a OpenAI cobra por uso);
+Copie a chave gerada e insira no arquivo .env do projeto:
